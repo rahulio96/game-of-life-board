@@ -2,11 +2,9 @@ package csc133;
 
 
 public class Main {
-    //private static slGoLBoard my_board;
-    private static final int ROWS = 6, COLS = 6; // 7, 9
-    private static final slGoLBoardLive my_board = new slGoLBoardLive(ROWS, COLS);
+    private static final int ROWS = 7, COLS = 9;
+    private static slGoLBoardLive my_board;
     public static void main(String[] args) {
-
         test_1();
         test_2();
         test_3();
@@ -15,6 +13,7 @@ public class Main {
     }
 
     private static void printCountTwoDegreeNeighbors(int x, int y) {
+        my_board = new slGoLBoardLive(ROWS, COLS);
         my_board.printGoLBoard();
         System.out.println("TwoDegreeNeighbors(" + x +", " + y + ") --> " +
                 my_board.countLiveTwoDegreeNeighbors(x, y));
@@ -43,18 +42,11 @@ public class Main {
 
     // print the board and the updated board
     private static void test_5() {
+        my_board = new slGoLBoardLive(ROWS, COLS);
         my_board.printGoLBoard();
-        System.out.println(my_board.countLiveTwoDegreeNeighbors(1, 1));
-        System.out.println();
-        return;
+        System.out.println("Board updated:");
+        int liveCells = my_board.updateNextCellArray();
+        my_board.printGoLBoard();
     }
 
 }
-
-
-
-
-
-
-
-
