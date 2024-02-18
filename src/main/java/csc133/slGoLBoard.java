@@ -2,12 +2,12 @@ package csc133;
 
 import java.util.Random;
 abstract class slGoLBoard {
-    public int NUM_ROWS;
-    public int NUM_COLS;
+    protected int NUM_ROWS;
+    protected int NUM_COLS;
 
-    public boolean[][]  cellArrayA, cellArrayB, liveCellArray, nextCellArray;
+    protected boolean[][]  cellArrayA, cellArrayB, liveCellArray, nextCellArray;
 
-    public slGoLBoard(int numRows, int numCols) {
+    protected slGoLBoard(int numRows, int numCols) {
         NUM_ROWS = numRows;
         NUM_COLS = numCols;
         cellArrayA = new boolean[NUM_ROWS][NUM_COLS];
@@ -26,7 +26,7 @@ abstract class slGoLBoard {
 
     // Create a Board with a given number of cells alive - the alive cells
     // are placed randomly placed applying Durstenfeld-Knuth random shuffling
-    public slGoLBoard(int numRows, int numCols, int numAlive) {
+    protected slGoLBoard(int numRows, int numCols, int numAlive) {
         NUM_ROWS = numRows;
         NUM_COLS = numCols;
         boolean[] tmpArray = new boolean[NUM_ROWS * NUM_COLS];
@@ -60,22 +60,22 @@ abstract class slGoLBoard {
     }  //  public slGoLBoard(int numRows, int numCols, int numAlive)
 
 
-    public boolean[][] getLiveCellArray() {
+    private boolean[][] getLiveCellArray() {
         return liveCellArray;
     }
-    public boolean[][] getNextCellArray() {
+    private boolean[][] getNextCellArray() {
         return nextCellArray;
     }
 
-    void setCellAlive(int row, int col){
+    private void setCellAlive(int row, int col){
         liveCellArray[row][col] = true;
     }
 
-    void setCellDead(int row, int col){
+    private void setCellDead(int row, int col){
         liveCellArray[row][col] = false;
     }
 
-    void setAllCells(boolean value) {
+    private void setAllCells(boolean value) {
         for (boolean[] rows : liveCellArray) {
             for (boolean cell : rows) {
                 cell = value;
@@ -83,7 +83,7 @@ abstract class slGoLBoard {
         }
     }  //  void setAllCells()
 
-    void copyLiveToNext() {
+    private void copyLiveToNext() {
         for (int row = 0; row < liveCellArray.length; ++row){
             for (int col = 0; col < liveCellArray[row].length; ++col) {
                 nextCellArray[row][col] = liveCellArray[row][col];
@@ -92,7 +92,7 @@ abstract class slGoLBoard {
         return;
     }  //  void copyLiveToNext()
 
-    void printGoLBoard() {
+    protected void printGoLBoard() {
         for (boolean[] my_row : liveCellArray) {
             for (boolean my_val : my_row) {
                 if (my_val == true) {
