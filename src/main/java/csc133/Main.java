@@ -21,14 +21,12 @@ public class Main {
 
     // print TwoDegreeNeighbors(ROWS-1, COLS-1)
     private static void test_2() {
-        /*
         my_board = new slGoLBoardLive(ROWS, COLS);
         my_board.printGoLBoard();
         int my_row = ROWS-1, my_col = COLS-1;
         System.out.println("TwoDegreeNeighbors(" + my_row +", " + my_col + ") --> " +
                 my_board.countLiveTwoDegreeNeighbors(ROWS-1, COLS-1));
         System.out.println();
-         */
         return;
     }
 

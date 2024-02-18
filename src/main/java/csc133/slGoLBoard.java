@@ -1,7 +1,7 @@
 package csc133;
 
 import java.util.Random;
-public class slGoLBoard {
+abstract class slGoLBoard {
     public int NUM_ROWS;
     public int NUM_COLS;
 
@@ -106,8 +106,8 @@ public class slGoLBoard {
     }  //  void printGoLBoard()
 
     // UNCOMMENT NEXT TWO LINES AND CHANGE THE ACCESS LEVELS OF THE FUNCTIONS:
-    //public int countLiveTwoDegreeNeighbors(int row, int col);
-    //public int updateNextCellArray();
+    abstract int countLiveTwoDegreeNeighbors(int row, int col);
+    abstract int updateNextCellArray();
 
 }  //  public class slGoLBoard
 
