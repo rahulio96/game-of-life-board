@@ -1,6 +1,5 @@
 package csc133;
 
-
 public class Main {
     private static final int ROWS = 7, COLS = 9;
     private static slGoLBoardLive my_board;
@@ -48,5 +47,4 @@ public class Main {
         int liveCells = my_board.updateNextCellArray();
         my_board.printGoLBoard();
     }
-
 }

@@ -12,10 +12,12 @@ public class slGoLBoardLive extends slGoLBoard {
     @Override
     public int countLiveTwoDegreeNeighbors(int row, int col) {
         int count = 0;
+        // all directions we need to move in
         int [][] directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}};
         for (int[] direction : directions) {
             int new_r = row + direction[0], new_c = col + direction[1];
 
+            // wrap around if out of bounds
             if (new_r < 0) {
                 new_r = NUM_ROWS - 1;
             }
@@ -29,12 +31,15 @@ public class slGoLBoardLive extends slGoLBoard {
                 new_c = 0;
             }
 
+            // see if cell is alive or not
             if (liveCellArray[new_r][new_c]) {
                 count++;
             }
         }
         return count;
     }
+
+    // given by professor
     @Override
     int updateNextCellArray() {
         int retVal = 0;
