@@ -41,7 +41,7 @@ public class slGoLBoardLive extends slGoLBoard {
 
     // given by professor
     @Override
-    int updateNextCellArray() {
+    public int updateNextCellArray() {
         int retVal = 0;
 
         int nln = 0;  // Number Live Neighbors
